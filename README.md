@@ -63,14 +63,3 @@ g++ Source.cpp -o InsuranceSystem
 ./InsuranceSystem
 
 
-📊 Project Artifacts
-For a deeper look into the design, refer to the following documents in the repository:
-
-🖼️ Class Diagram: ClassDiagram.png
-
-📑 Use Case Document: UseCase.pdf
-
-📊 Quality Report: CCCC Report.html
-
-⚖️ License
-This project was developed for academic purposes. All rights reserved.

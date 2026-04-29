@@ -1,114 +1,72 @@
-# \# Automobile Insurance Management System
+# 🚗 Automobile Insurance Management System
 
-# 
+[![C++](https://img.shields.io/badge/Language-C%2B%2B-blue.svg)](https://isocpp.org/)
+[![Project Type](https://img.shields.io/badge/Coursework-Software%20Design%20%26%20Analysis-green)](https://github.com/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg)](https://github.com/)
 
-# A comprehensive, console-based information system designed for an automobile insurance company. This project implements key business workflows, including customer registration, vehicle insurance policy management, claim filing, surveyor inspections, and managerial approvals.
+An enterprise-grade C++ console application designed to streamline the lifecycle of automobile insurance. This system implements complex workflows from vehicle onboarding to multi-stage claim approvals.
 
-# 
+---
 
-# \## 👥 Team Members
+## 👥 Meet the Team
+| Name | Roll Number |
+| :--- | :--- |
+| **Muhammad Ali** | 24L-0705 |
+| **Yaseen Ahmad Khan** | 24L-0500 |
 
-# \*   \*\*Muhammad Ali\*\* (Roll No: 24L-0705)
+---
 
-# \*   \*\*Yaseen Ahmad Khan\*\* (Roll No: 24L-0500)
+## 🚀 Project Overview
+Developed as part of the **Software Design and Architecture** curriculum, this project applies advanced **Object-Oriented Programming (OOP)** to simulate a real-world insurance ecosystem.
 
-# 
+### 🛡️ Stakeholder Ecosystem
+| Role | Core Responsibility |
+| :--- | :--- |
+| **Manager** | Operations oversight, claim adjudication, and workshop management. |
+| **Customer** | Profile management, vehicle onboarding, and claim filing. |
+| **Surveyor** | Technical damage assessment and inspection report generation. |
+| **Salesman** | Policy sales facilitation and performance tracking. |
 
-# \---
+---
 
-# 
+## ✨ Key Technical Features
+*   **Persistent Data Layer**: Robust file-based system using `.txt` files with custom serialization.
+*   **Role-Based Access Control (RBAC)**: Distinct interfaces and permissions for every user type.
+*   **Automated Policy Logic**: Dynamic premium and coverage calculations based on vehicle metadata.
+*   **Multi-Stage Claim Pipeline**: Integrated workflow involving customers, surveyors, and managers.
+*   **Financial Tracking**: Automated 5% commission calculation for sales conversions.
 
-# \## 🚀 Project Overview
+---
 
-# The system is built using C++ and follows strict object-oriented programming principles. It simulates a real-world insurance environment where multiple actors (Customers, Managers, Surveyors, and Salesmen) interact to manage the lifecycle of an automobile insurance policy and its subsequent claims.
+## 🏗️ System Architecture
+The system utilizes a clean, hierarchical class structure to ensure scalability and maintainability:
 
-# 
+*   **Foundation**: `Person` (Abstract) → `Staff` (Derived).
+*   **Logic**: Specialized roles (`Manager`, `Surveyor`, `Salesman`) inherit from `Staff`.
+*   **Entities**: `Vehicle`, `Policy`, `Claim`, and `Workshop`.
+*   **Utility**: `FileHandler` isolates business logic from I/O operations.
 
-# \### Key Features
+---
 
-# \*   \*\*File-Based Persistence\*\*: Uses simple text files (`customers.txt`, `claims.txt`, `policies.txt`, etc.) for data storage, ensuring no DBMS is required while maintaining data across sessions.
+## 🛠️ Installation & Usage
 
-# \*   \*\*Role-Based Access\*\*: 
+### 1. Prerequisites
+Ensure you have a C++ compiler installed (e.g., GCC, Clang, or MSVC).
 
-# &#x20;   \*   \*\*Manager\*\*: Approves/rejects claims, views reports, and manages workshops.
+### 2. Build
+```bash
+g++ Source.cpp -o InsuranceSystem
+3. Run
+Bash
+./InsuranceSystem
+📊 Project Artifacts
+For a deeper look into the design, refer to the following documents in the repository:
 
-# &#x20;   \*   \*\*Customer\*\*: Registers, applies for insurance, and files repair requests.
+🖼️ Class Diagram: ClassDiagram.png
 
-# &#x20;   \*   \*\*Surveyor\*\*: Inspects damaged vehicles and submits technical reports.
+📑 Use Case Document: UseCase.pdf
 
-# &#x20;   \*   \*\*Salesman\*\*: Tracks policy sales and earns commissions.
+📊 Quality Report: CCCC Report.html
 
-# \*   \*\*Workflow Integration\*\*: A multi-step pipeline where a manager can only approve a claim once a surveyor has submitted a recommendation.
-
-# \*   \*\*Sales Tracking\*\*: Automated commission calculation (5%) for salesmen upon every successful policy sale.
-
-# \*   \*\*Workshop Management\*\*: Validates that repairs are only conducted at registered workshops.
-
-# 
-
-# \---
-
-# 
-
-# \## 🏗 System Architecture
-
-# The project is structured around several core classes:
-
-# \*   \*\*Person (Abstract)\*\*: Base class for all users.
-
-# \*   \*\*Staff (Derived)\*\*: Base class for company employees.
-
-# \*   \*\*Manager, Surveyor, Salesman\*\*: Specialized roles with unique business logic.
-
-# \*   \*\*Customer\*\*: Manages personal policies and claims.
-
-# \*   \*\*Claim \& InspectionReport\*\*: Core entities for the repair workflow.
-
-# \*   \*\*Policy \& Vehicle\*\*: Core entities for the insurance workflow.
-
-# \*   \*\*FileHandler\*\*: A utility class that isolates all File I/O operations from the business logic.
-
-# 
-
-# \---
-
-# 
-
-# \## 💻 How to Run
-
-# 1\.  \*\*Compile\*\*: Use any standard C++ compiler (e.g., `g++` or the Visual Studio C++ Compiler).
-
-# &#x20;   ```bash
-
-# &#x20;   g++ Source.cpp -o InsuranceSystem
-
-# &#x20;   ```
-
-# 2\.  \*\*Execute\*\*: Run the generated executable.
-
-# &#x20;   ```bash
-
-# &#x20;   ./InsuranceSystem
-
-# &#x20;   ```
-
-# 3\.  \*\*Data Files\*\*: Ensure that `customers.txt`, `claims.txt`, and `pending.txt` exist in the same directory (the system will create them if they are missing).
-
-# 
-
-# \---
-
-# 
-
-# \## 🛠 Programming Practices
-
-# \*   \*\*Encapsulation\*\*: All data members are private/protected with getter and setter methods.
-
-# \*   \*\*Inheritance \& Polymorphism\*\*: Used for the Person/Staff hierarchy.
-
-# \*   \*\*Serialization\*\*: Custom logic to handle spaces in strings (names/descriptions) for reliable file storage.
-
-# \*   \*\*Input Validation\*\*: Ensures valid IDs and workshop selections are entered.
-
-
-
+⚖️ License
+This project was developed for academic purposes. All rights reserved.

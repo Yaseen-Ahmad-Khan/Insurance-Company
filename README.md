@@ -57,8 +57,12 @@ Ensure you have a C++ compiler installed (e.g., GCC, Clang, or MSVC).
 ```bash
 g++ Source.cpp -o InsuranceSystem
 3. Run
-Bash
+
+
+
 ./InsuranceSystem
+
+
 📊 Project Artifacts
 For a deeper look into the design, refer to the following documents in the repository:
 
